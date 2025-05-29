@@ -8,18 +8,18 @@ const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
 const HeroSection = () => {
   const globeConfig = {
     pointSize: 4,
-    globeColor: "#f1f1f1",
+    globeColor: "#ffffff",
     showAtmosphere: true,
-    atmosphereColor: "#fdfdfd",
-    atmosphereAltitude: 0.1,
-    emissive: "#f1f1f1",
+    atmosphereColor: "#fff",
+    atmosphereAltitude: 1,
+    emissive: "#fcfcfc",
     emissiveIntensity: 0.1,
-    shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#f1f1f1",
-    directionalLeftLight: "#49495c",
-    directionalTopLight: "#49495c",
-    pointLight: "#49495c",
+    shininess: 2,
+    polygonColor: "#48495b",
+    ambientLight: "#ffffff",
+    directionalLeftLight: "#ffffff",
+    directionalTopLight: "#ffffff",
+    pointLight: "red",
     arcTime: 1000,
     arcLength: 0.9,
     rings: 1,
@@ -416,7 +416,7 @@ const HeroSection = () => {
             dont forget to share it.
           </p>
         </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
+        <div className="absolute w-[840px] bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
         <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>

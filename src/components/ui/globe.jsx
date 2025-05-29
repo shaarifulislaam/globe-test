@@ -23,7 +23,7 @@ export function Globe({ globeConfig, data }) {
     globeColor: "#1d072e",
     emissive: "#000000",
     emissiveIntensity: 0.1,
-    shininess: 0.9,
+    shininess: 2,
     arcTime: 2000,
     arcLength: 0.9,
     rings: 1,
@@ -81,26 +81,26 @@ export function Globe({ globeConfig, data }) {
       .atmosphereAltitude(defaultProps.atmosphereAltitude)
       .hexPolygonColor(() => defaultProps.polygonColor);
 
-    globeRef.current
-      .arcsData(arcs)
-      .arcStartLat((d) => d.startLat)
-      .arcStartLng((d) => d.startLng)
-      .arcEndLat((d) => d.endLat)
-      .arcEndLng((d) => d.endLng)
-      .arcColor((e) => e.color)
-      .arcAltitude((e) => e.arcAlt || 0.3)
-      .arcStroke(() => 0.3)
-      .arcDashLength(defaultProps.arcLength)
-      .arcDashInitialGap((e) => e.order || 0)
-      .arcDashGap(15)
-      .arcDashAnimateTime(() => defaultProps.arcTime);
+    // globeRef.current
+    //   .arcsData(arcs)
+    //   .arcStartLat((d) => d.startLat)
+    //   .arcStartLng((d) => d.startLng)
+    //   .arcEndLat((d) => d.endLat)
+    //   .arcEndLng((d) => d.endLng)
+    //   .arcColor((e) => e.color)
+    //   .arcAltitude((e) => e.arcAlt || 0.3)
+    //   .arcStroke(() => 0.3)
+    //   .arcDashLength(defaultProps.arcLength)
+    //   .arcDashInitialGap((e) => e.order || 0)
+    //   .arcDashGap(15)
+    //   .arcDashAnimateTime(() => defaultProps.arcTime);
 
-    globeRef.current
-      .pointsData(points)
-      .pointColor((e) => e.color)
-      .pointsMerge(true)
-      .pointAltitude(0)
-      .pointRadius(1.5);
+    // globeRef.current
+    //   .pointsData(points)
+    //   .pointColor((e) => e.color)
+    //   .pointsMerge(true)
+    //   .pointAltitude(0)
+    //   .pointRadius(1.5);
   }, [isInitialized, data]);
 
   return <group ref={groupRef} />;
