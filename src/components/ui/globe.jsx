@@ -121,7 +121,11 @@ export function World({ globeConfig, data }) {
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, 1.2, 180, 1800)}>
+    <Canvas
+      className="aspect-[1/1] "
+      scene={scene}
+      camera={new PerspectiveCamera(50, 1.2, 180, 1800)}
+    >
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
