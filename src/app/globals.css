@@ -198,17 +198,42 @@ img {
     min-height: 520px;
   }
 }
+.globe-container .text-block-container .globe-1 {
+  top: 10%;
+  left: 15%;
+}
+.globe-container .text-block-container .globe-2 {
+  top: 10%;
+  right: 7%;
+}
+.globe-container .text-block-container .globe-3 {
+  top: 30%;
+  left: 0%;
+}
+
+.globe-container .text-block-container .globe-4 {
+  top: 30%;
+  right: 15%;
+}
+.globe-container .text-block-container .globe-5 {
+  top: 50%;
+  left: 10%;
+}
+.globe-container .text-block-container .globe-6 {
+  top: 50%;
+  right: 0%;
+}
 @media (max-width: 1200px) {
   .globe-container .text-block-container .globe-4 {
     right: 0;
   }
   .globe-container .text-block-container .globe-1 {
-    left: 10%;
-    top: 20%;
+    left: 18%;
+    top: 10%;
   }
   .globe-container .text-block-container .globe-2 {
-    right: 5%;
-    top: 20%;
+    right: 0%;
+    top: 10%;
   }
 }
 @media (max-width: 991px) {
@@ -220,11 +245,11 @@ img {
   .globe-container .text-block-container .globe-3 {
     left: unset;
     top: unset;
-    bottom: 5%;
+    bottom: 40%;
     right: 15%;
   }
   .globe-container .text-block-container .globe-2 {
-    top: 55%;
+    top: 30%;
     right: unset;
     left: 15%;
   }
@@ -244,16 +269,19 @@ img {
 @media (max-width: 575px) {
   .globe-container .text-block-container .globe-3 {
     right: 10%;
-    bottom: 0%;
+    bottom: 25%;
   }
   .globe-container .text-block-container .globe-2 {
-    top: 50%;
+    top: 40%;
 
     left: 10%;
   }
 
   .globe-container .text-block-container .globe-1 {
     left: 30%;
+  }
+  .globe-area {
+    min-height: 350px;
   }
 }
 

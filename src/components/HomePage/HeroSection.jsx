@@ -10,12 +10,12 @@ const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
 const HeroSection = () => {
   const globeConfig = {
     pointSize: 4,
-    globeColor: "#ffffff",
+    globeColor: "#ebecef",
     showAtmosphere: true,
     atmosphereColor: "#fff",
     atmosphereAltitude: 1,
     emissive: "#fcfcfc",
-    emissiveIntensity: 0.1,
+    emissiveIntensity: 1.8,
     shininess: 2,
     polygonColor: "#48495b",
     ambientLight: "#ffffff",
@@ -457,7 +457,7 @@ const HeroSection = () => {
           </Link>
         </div>
       </div>
-      <div className=" max-w-[900px] mx-auto w-full relative overflow-hidden min-h-[640px] px-4">
+      <div className="globe-area max-w-[650px] xl:max-w-[900px] mx-auto w-full relative overflow-hidden min-h-[480px] xl:min-h-[640px] px-4">
         <div className="globe-container absolute w-full  z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
           <div className="text-block-container w-full flex flex-col gap-[10px]">
