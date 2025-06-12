@@ -33,7 +33,7 @@ export const textBlocks = [
     id: "6",
     text: "AI Predicts 70% Upside in Renewable Energy Sector",
     top: "top-[50%]",
-    right: "right-[0]",
+    right: "right-[0%]",
   },
 ];
 export default textBlocks;
