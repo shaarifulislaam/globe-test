@@ -2,20 +2,35 @@
 // import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 const Navbar = () => {
   // const { status } = useSession();
-  // const router = useRouter();
+  const router = useRouter();
 
-  // const handleAuth = () => {
-  //   if (status === "authenticated") {
-  //     signOut();
-  //   } else {
-  //     router.push("/signin");
-  //   }
-  // };
+  const handleAuth = () => {
+    //   if (status === "authenticated") {
+    //     signOut();
+    //   } else {
+    router.push("/signin");
+    //   }
+  };
+  const [selectedLang, setSelectedLang] = useState({
+    name: "Netherlands",
+    code: "en",
+  });
+  const pathname = usePathname();
+  const handleSelect = (langObj) => {
+    setSelectedLang(langObj);
+
+    // Update the route (change language in the URL)
+    const segments = pathname.split("/");
+    segments[1] = langObj.code; // Replace lang in path
+    const newPath = segments.join("/");
+
+    router.push(newPath);
+  };
   return (
     <nav>
       <div className="sa-container">
@@ -28,9 +43,45 @@ const Navbar = () => {
               width={66}
             />
           </Link>
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn m-1">
+              {selectedLang.code}
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+            >
+              <li>
+                <button
+                  onClick={() =>
+                    handleSelect({
+                      name: "English",
+                      code: "en",
+                    })
+                  }
+                  className="text-white"
+                >
+                  English
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    handleSelect({
+                      name: "English",
+                      code: "nl",
+                    })
+                  }
+                  className="text-white"
+                >
+                  Nederlands
+                </button>
+              </li>
+            </ul>
+          </div>
           <button
-            // onClick={handleAuth}
-            className="px-[15px] py-[10px] btn btn-primary bg-[#070707] rounded-[4px] grid grid-cols-[auto_13px] items-center gap-[5px]"
+            onClick={handleAuth}
+            className="px-[15px] border-0 py-[10px] btn btn-primary bg-[#070707] rounded-[4px] grid grid-cols-[auto_13px] items-center gap-[5px]"
           >
             <span className="text-[#F1F4F2] text-[14px]">Sign In</span>
             <span className="btn-icon">

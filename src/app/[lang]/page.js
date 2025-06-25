@@ -4,11 +4,14 @@ import FaqSection from "@/components/HomePage/FaqSection";
 import HeroSection from "@/components/HomePage/HeroSection";
 import LogoSliderSection from "@/components/HomePage/LogoSliderSection";
 import React from "react";
+import { getDictionary } from "./dictionaries/dictionaries";
 
-export default function Home() {
+export default async function Home({ params }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
   return (
     <>
-      <HeroSection />
+      <HeroSection lang={dict} />
       <LogoSliderSection />
       <ActionCard />
       <AboutCard />

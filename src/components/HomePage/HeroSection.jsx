@@ -7,7 +7,7 @@ import textBlocks from "@/pageData/HeroData";
 const World = dynamic(() => import("../ui/globe").then((m) => m.World), {
   ssr: false,
 });
-const HeroSection = () => {
+const HeroSection = ({ lang }) => {
   const globeConfig = {
     pointSize: 4,
     globeColor: "#ebecef",
@@ -397,12 +397,10 @@ const HeroSection = () => {
     <>
       <div className="lg:pt-[35px] pt-[60px] w-full  mx-auto flex flex-col justify-between md:gap-[25px] gap-[15px]">
         <h1 className="[leading-trim:both] [text-edge:cap] 2xl:text-[60px] leading-none tracking-normal xl:tracking-[-3.6px] xl:text-[54px] lg:text-[44px] md:text-[36px] text-[32px] text-center font-semibold">
-          Wall Street Alpha to Main Street
+          {lang.title}
         </h1>
         <p className="text-[16px] text-[#555] mx-auto max-w-[669px] tracking-normal xl:tracking-[-0.48px] leading-[1.6] text-center">
-          Empowering everyday investors with AI-driven market insights. Leverage
-          quantitative strategies and real-time news analytics previously
-          reserved for institutional investors.
+          {lang.subTitle}
         </p>
         <div className="btn-container flex gap-[15px] items-center justify-center">
           <Link href={"/"}>
